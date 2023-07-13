@@ -2,26 +2,59 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+input,select{
+    @apply border-2 border-gray-400 rounded-md py-1 px-2 w-full mb-4 mt-1
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+input:focus, select:focus{
+    @apply border-2 border-blue-800 rounded-md py-1 px-2
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+textarea{
+    @apply border-2 border-gray-400 rounded-md py-1 px-2 w-full mt-1
+}
+textarea:focus{
+    @apply border-2 border-blue-800 rounded-md py-1 px-2 w-full
+}
+
+h1{
+    @apply text-blue-800 text-xl;
+}
+
+label{
+    @apply text-blue-800 font-semibold; 
+}
+
+.btn-primary{
+    @apply bg-blue-800 rounded-md px-4 py-1 text-white
+}
+
+
+table.basic{
+    @apply w-full mt-5;
+}
+table.basic thead tr td{
+    @apply bg-blue-100 
+}
+table.basic tr td,
+table.basic tr th
+{
+    @apply border border-blue-300 p-2 text-center; 
+}
+table.basic tr th{
+    @apply shadow-lg
+}
+
+table.basic a{
+    @apply  text-white rounded-md px-2 py-1 inline-flex m-1; 
+}
+.edit{
+    @apply bg-blue-800 hover:bg-white hover:text-blue-800 hover:border-solid border-2 hover:border-blue-800
+}
+.delete{
+  @apply  bg-red-700 hover:bg-white hover:text-red-700 hover:border-solid border-2 hover:border-red-700 rounded-md px-2 py-1 text-white
+}
+.save{
+    @apply bg-green-500 hover:bg-white hover:text-green-500 hover:border-solid border-2
+     hover:border-green-500 text-white rounded-md px-2 py-1 justify-center mt-0 mb-3 min-w-[100px] flex;
 }
